@@ -1,6 +1,10 @@
-    flex center {
+.flex center {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
+ion-button[color="dark"] {
+    text-transform: initial;
+  }
+  
