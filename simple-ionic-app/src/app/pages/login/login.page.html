@@ -1,16 +1,20 @@
 <ion-content>
   <div class="flex center">
+    <form[formGroup]="form">
     <ion-card>
       <ion-card-header>
         <ion-card-title color="success">Tea Shop</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-input label="Email" labelPlacement="floating" placeholder="Enter your Email"></ion-input>
+          <ion-input label="Email" labelPlacement="floating" placeholder="Enter your Email"type="email" formControlName="email"></ion-input>
         </ion-item>
+        <app-error-message>[field]="form.get('email')" error="required" message="Email is mendatory"></app-error-message>
+        <app-error-message>[field]="form.get('email')" error="email" message="Email is iinvalid"></app-error-message>
         <ion-item>
-          <ion-input label="Password" labelPlacement="floating" placeholder="Enter your Password"></ion-input>
+          <ion-input label="Password" labelPlacement="floating" placeholder="Enter your Password" type="password"formControlName="password"></ion-input>
         </ion-item>
+        <app-error-message>[field]="form.get('password')" error="required" message="password is mendatory"></app-error-message>
         <ion-button color="dark" fill="clear" size="full">Forgot Email/Password</ion-button>
         <ion-button color="success" size="full">Login</ion-button>
         <ion-button color="success"fill="clear" size="full">Register</ion-button>
@@ -18,6 +22,7 @@
         
       </ion-card-content>
     </ion-card>
+  </form>
   </div>
 </ion-content>
 <style>
